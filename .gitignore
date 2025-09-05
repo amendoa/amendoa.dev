@@ -1,2 +1,6 @@
 # Node.js
 node_modules
+
+# Quartz
+dist
+quartz
