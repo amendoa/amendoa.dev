@@ -1,4 +1,4 @@
-all: clean prepare get-quartz link-quartz-overrides install-quartz-dependencies
+all: clean prepare get-quartz link-quartz-overrides install-quartz-dependencies install-dependencies
 
 prepare:
 	@mkdir quartz
@@ -15,6 +15,9 @@ link-quartz-overrides: content quartz.config.ts quartz.layout.ts static/icon.png
 	ln -s ../quartz.layout.ts; \
 	cp ../static/icon.png quartz/static/; \
 	cp ../static/og-image.png quartz/static/
+
+install-dependencies:
+	@pnpm install
 
 install-quartz-dependencies: quartz
 	@cd quartz; \
