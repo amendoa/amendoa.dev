@@ -1,20 +1,8 @@
+import conventionalTypes from "./conventional-types";
+
 export default {
   extends: ["@commitlint/config-conventional"],
   rules: {
-    "type-enum": [
-      2,
-      "always",
-      [
-        "chore",
-        "ci",
-        "docs",
-        "feat",
-        "fix",
-        "refactor",
-        "revert",
-        "style",
-        "test",
-      ],
-    ],
+    "type-enum": [2, "always", conventionalTypes.map(({ type }) => type)],
   },
 };
