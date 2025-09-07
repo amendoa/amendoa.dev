@@ -9,6 +9,12 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/amendoa",
+      ...(process.env.VERSION
+        ? {
+            [process.env.VERSION]:
+              `https://github.com/amendoa/amendoa.dev/releases/tag/${process.env.VERSION}`,
+          }
+        : {}),
     },
   }),
 };

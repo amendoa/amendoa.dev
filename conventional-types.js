@@ -3,7 +3,7 @@ export default [
   { type: "fix", changelogConfig: { section: "Bug Fixes" } },
   { type: "revert", changelogConfig: { section: "Reverts" } },
   {
-    type: "ci-cd",
+    type: "cicd",
     changelogConfig: {
       section: "Continuous Integration | Continuous Delivery",
     },
