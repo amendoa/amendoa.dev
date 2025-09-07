@@ -4,3 +4,6 @@ node_modules
 # Quartz
 dist
 quartz
+
+# macOS
+.DS_Store
