@@ -8,8 +8,8 @@ import * as Plugin from "./quartz/quartz/plugins";
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "amendoa.dev",
-    pageTitleSuffix: "- amendoa.dev",
+    pageTitle: "",
+    pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
