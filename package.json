@@ -1,10 +1,10 @@
 {
   "version": "0.9.9",
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "conventional-changelog-conventionalcommits": "^9.1.0",
-    "husky": "^9.1.7"
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
+    "conventional-changelog-conventionalcommits": "6.1.0",
+    "husky": "9.1.7"
   },
   "scripts": {
     "prepare": "husky",
