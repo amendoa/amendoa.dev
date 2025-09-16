@@ -9,4 +9,4 @@ Aqui compartilharei alguns snippets, dicas, PoCs e projetos completos. Espero qu
 Se quiser, você pode começar entendendo [[how-i-built-my-blog-with-quartz|como criei esse blog]].
 
 Estou no:
-[Github](https://github.com/amendoa) • [Linkedin](https://www.linkedin.com/in/matheus-almeida-74a682119) • [Printables](https://www.printables.com/@amendoadev_889689)
+[Github](https://github.com/amendoa) • [Linkedin](https://www.linkedin.com/in/matheus-silva-de-almeida-74a682119) • [Printables](https://www.printables.com/@amendoadev_889689)
