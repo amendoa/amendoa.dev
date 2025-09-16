@@ -1,3 +1,4 @@
+name: Delivery
 on:
   push:
     branches:
@@ -28,35 +29,34 @@ jobs:
       - name: Make project
         run: make
 
-      # - name: Create tag, bump version and generate Changelogs
-      #   id: conventional
-      #   uses: TriPSs/conventional-changelog-action@v5
-      #   with:
-      #     github-token: ${{ secrets.github_token }}
-      #     skip-git-pull: true
-      #     config-file-path: "./conventional-changelog-action.config.js"
+      - name: Create tag, bump version and generate Changelogs
+        id: conventional
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.github_token }}
+          skip-git-pull: true
+          config-file-path: "./conventional-changelog-action.config.js"
 
-      # - name: Build project
-      #   env:
-      #     VERSION: ${{ steps.conventional.outputs.tag }}
-      #   run: pnpm build
+      - name: Build project
+        env:
+          VERSION: ${{ steps.conventional.outputs.tag }}
+        run: pnpm build
 
-      # - name: Archive dist
-      #   run: tar -czf dist.tar.gz dist
+      - name: Archive dist
+        run: tar -czf dist.tar.gz dist
 
-      # - name: Create Github Release
-      #   uses: softprops/action-gh-release@v2
-      #   with:
-      #     body: ${{ steps.conventional.outputs.changelog }}
-      #     tag_name: ${{ steps.conventional.outputs.tag }}
-      #     name: ${{ steps.conventional.outputs.tag }}
-      #     files: |
-      #       dist.tar.gz
+      - name: Create Github Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: ${{ steps.conventional.outputs.changelog }}
+          tag_name: ${{ steps.conventional.outputs.tag }}
+          name: ${{ steps.conventional.outputs.tag }}
+          files: |
+            dist.tar.gz
 
-      # - run: ls dist
-      # - name: Deploy to CF pages
-      #   uses: cloudflare/wrangler-action@v3
-      #   with:
-      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      #     command: pages deploy dist --project-name=amendoadev
+      - name: Deploy to CF pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=amendoadev
