@@ -1,8 +1,8 @@
 const config = require("conventional-changelog-conventionalcommits");
-const conventionalTypes = required("./conventional-types");
+const conventionalTypes = require("./conventional-types");
 
 module.exports = config({
-  types: conventionalTypes.map(({ type, changelogConfig }) => ({
+  types: conventionalTypes.default.map(({ type, changelogConfig }) => ({
     type,
     ...changelogConfig,
   })),
