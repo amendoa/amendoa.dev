@@ -66,7 +66,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.ContentMeta(),
   ],
   left: [
-    Component.PageTitle(),
+    Component.Flex({
+      components: [{ Component: CustomComponent.Logo() }],
+    }),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
