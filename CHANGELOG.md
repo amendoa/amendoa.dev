@@ -1,4 +1,21 @@
-## 0.2.0 (2025-09-17)
+## [0.3.0](https://github.com/amendoa/amendoa.dev/compare/v0.2.0...v0.3.0) (2025-09-18)
+
+
+### Features
+
+* **content:** add macos-reboot-persistent-bindfs snippet ([088e02b](https://github.com/amendoa/amendoa.dev/commit/088e02ba80c3157318e0ba1a54850f9a7c16d52d))
+
+
+### Bug Fixes
+
+* **quartz:** add missing logo ([12d3832](https://github.com/amendoa/amendoa.dev/commit/12d3832dc51e67dba21428f9ad4c28e7efe4b5ee))
+
+
+### Documentation
+
+* update linkedin url ([95af98f](https://github.com/amendoa/amendoa.dev/commit/95af98fa1bc9b10d10ce6fc6936d4b7aa44978e2))
+
+## [0.2.0](https://github.com/amendoa/amendoa.dev/compare/96018abe995dcae8c5a1efe7a832468142a7174b...v0.2.0) (2025-09-17)
 
 
 ### Features
@@ -30,6 +47,7 @@
 * lock all versions with exact match ([6103ebd](https://github.com/amendoa/amendoa.dev/commit/6103ebd5932611276611ffe182b1222abfe4b7bf))
 * **makefile:** add a new step to install pnpm deps ([2ace5b5](https://github.com/amendoa/amendoa.dev/commit/2ace5b534a3a1538e8c093503deff2c97bf6c18c))
 * move conventional config to a new file ([6ef2e72](https://github.com/amendoa/amendoa.dev/commit/6ef2e726412825da481cb6a412451750b91e0479))
+* **release:** v0.2.0 [skip ci] ([e2d94ef](https://github.com/amendoa/amendoa.dev/commit/e2d94efc5b292134a6fbd69f0b8f0679fa4ede4d))
 * setup commitlint and husky ([96018ab](https://github.com/amendoa/amendoa.dev/commit/96018abe995dcae8c5a1efe7a832468142a7174b))
 * setup Quartz ([063298e](https://github.com/amendoa/amendoa.dev/commit/063298e808eae046b5fecc9e831a18ae438315e1))
 
