@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/amendoa/amendoa.dev/compare/v0.3.0...v0.3.1) (2025-09-18)
+
+
+### Bug Fixes
+
+* remove snippets link ([83bcb27](https://github.com/amendoa/amendoa.dev/commit/83bcb276ca0ec935c4b078a11268e90ba584119a))
+
 ## [0.3.0](https://github.com/amendoa/amendoa.dev/compare/v0.2.0...v0.3.0) (2025-09-18)
 
 
@@ -9,6 +16,11 @@
 ### Bug Fixes
 
 * **quartz:** add missing logo ([12d3832](https://github.com/amendoa/amendoa.dev/commit/12d3832dc51e67dba21428f9ad4c28e7efe4b5ee))
+
+
+### Chores
+
+* **release:** v0.3.0 [skip ci] ([11c3683](https://github.com/amendoa/amendoa.dev/commit/11c368361196ca9fcba1e333bd9229c312c2ed85))
 
 
 ### Documentation
