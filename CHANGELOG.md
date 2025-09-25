@@ -1,9 +1,21 @@
+## [0.4.0](https://github.com/amendoa/amendoa.dev/compare/v0.3.1...v0.4.0) (2025-09-25)
+
+
+### Features
+
+* update logo ([b4628fe](https://github.com/amendoa/amendoa.dev/commit/b4628fe9e85deef52e2229fc7041e3f317022cfd))
+
 ## [0.3.1](https://github.com/amendoa/amendoa.dev/compare/v0.3.0...v0.3.1) (2025-09-18)
 
 
 ### Bug Fixes
 
 * remove snippets link ([83bcb27](https://github.com/amendoa/amendoa.dev/commit/83bcb276ca0ec935c4b078a11268e90ba584119a))
+
+
+### Chores
+
+* **release:** v0.3.1 [skip ci] ([4394114](https://github.com/amendoa/amendoa.dev/commit/4394114364d31867649f8d53ba8ed2f0f35dbbaf))
 
 ## [0.3.0](https://github.com/amendoa/amendoa.dev/compare/v0.2.0...v0.3.0) (2025-09-18)
 
