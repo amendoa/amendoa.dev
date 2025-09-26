@@ -1,9 +1,31 @@
+## [0.5.0](https://github.com/amendoa/amendoa.dev/compare/v0.4.0...v0.5.0) (2025-09-26)
+
+
+### Features
+
+* **content:** add snippets index page ([724a917](https://github.com/amendoa/amendoa.dev/commit/724a9170881d2241ebcf6271f6965d96f7b99dce))
+
+
+### Continuous Integration | Continuous Delivery
+
+* **delivery:** enable corepack ([c50782f](https://github.com/amendoa/amendoa.dev/commit/c50782f1e2129e4574da1218ad463df13d37992d))
+
+
+### Chores
+
+* set packageManager version ([7b88cf2](https://github.com/amendoa/amendoa.dev/commit/7b88cf20ced6e21c609637ca288a1d88b77e3cd0))
+
 ## [0.4.0](https://github.com/amendoa/amendoa.dev/compare/v0.3.1...v0.4.0) (2025-09-25)
 
 
 ### Features
 
 * update logo ([b4628fe](https://github.com/amendoa/amendoa.dev/commit/b4628fe9e85deef52e2229fc7041e3f317022cfd))
+
+
+### Chores
+
+* **release:** v0.4.0 [skip ci] ([5ee9c39](https://github.com/amendoa/amendoa.dev/commit/5ee9c399c6471737b89274e15a227ead7a816103))
 
 ## [0.3.1](https://github.com/amendoa/amendoa.dev/compare/v0.3.0...v0.3.1) (2025-09-18)
 
