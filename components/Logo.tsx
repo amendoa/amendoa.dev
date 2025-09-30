@@ -13,6 +13,8 @@ export default () => {
           viewBox="0 0 800 800"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Website logo"
         >
           <path
             d="M200 622V582H160V542H120V502H80H40V462H0V222H80V142H120V62H240V102H360V182H440V102H560V62H680V142H720V222H800V462H760V502H720H680V542H640V582H600V622H680V742H560V662H440V582H360V662H240V742H120V622H200Z"
