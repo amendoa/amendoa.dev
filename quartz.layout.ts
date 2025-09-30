@@ -27,6 +27,7 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
+    CustomComponent.GoToEnglishVersion(),
     Component.ArticleTitle(),
     Component.ConditionalRender({
       component: Component.ContentMeta(),
@@ -62,6 +63,7 @@ export const defaultContentPageLayout: PageLayout = {
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
     Component.Breadcrumbs(),
+    CustomComponent.GoToEnglishVersion(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
   ],
