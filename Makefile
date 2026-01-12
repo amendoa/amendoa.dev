@@ -13,8 +13,7 @@ link-quartz-overrides: content quartz.config.ts quartz.layout.ts static/icon.png
 	ln -s ../content; \
 	ln -s ../quartz.config.ts; \
 	ln -s ../quartz.layout.ts; \
-	cp ../static/icon.png quartz/static/; \
-	cp ../static/og-image.png quartz/static/
+	cp -r ../static/. quartz/static
 
 install-dependencies:
 	@pnpm install

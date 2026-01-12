@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/quartz/cfg";
 import * as Plugin from "./quartz/quartz/plugins";
+import * as CustomTransformers from "./transformers";
 
 /**
  * Quartz 4 Configuration
@@ -75,6 +76,7 @@ const config: QuartzConfig = {
       }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      CustomTransformers.EnglishVersion(),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
