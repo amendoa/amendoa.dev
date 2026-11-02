@@ -1,3 +1,10 @@
+## [0.7.0](https://github.com/amendoa/amendoa.dev/compare/v0.6.0...v0.7.0) (2026-11-02)
+
+
+### Features
+
+* add AI-assisted label ([e1277f2](https://github.com/amendoa/amendoa.dev/commit/e1277f2a4c53b3066884079fa862832b972d6a71))
+
 ## [0.6.0](https://github.com/amendoa/amendoa.dev/compare/v0.5.0...v0.6.0) (2026-01-12)
 
 
@@ -14,6 +21,7 @@
 ### Chores
 
 * **makefile:** copy all static dir contents ([d484ece](https://github.com/amendoa/amendoa.dev/commit/d484ece724b4fbba528b654272ef35ebb211804e))
+* **release:** v0.6.0 [skip ci] ([9c3600a](https://github.com/amendoa/amendoa.dev/commit/9c3600a54378061edfae8a5e53ff502c8ec805af))
 
 ## [0.5.0](https://github.com/amendoa/amendoa.dev/compare/v0.4.0...v0.5.0) (2025-09-26)
 
@@ -56,26 +64,4 @@
 ### Chores
 
 * **release:** v0.3.1 [skip ci] ([4394114](https://github.com/amendoa/amendoa.dev/commit/4394114364d31867649f8d53ba8ed2f0f35dbbaf))
-
-## [0.3.0](https://github.com/amendoa/amendoa.dev/compare/v0.2.0...v0.3.0) (2025-09-18)
-
-
-### Features
-
-* **content:** add macos-reboot-persistent-bindfs snippet ([088e02b](https://github.com/amendoa/amendoa.dev/commit/088e02ba80c3157318e0ba1a54850f9a7c16d52d))
-
-
-### Bug Fixes
-
-* **quartz:** add missing logo ([12d3832](https://github.com/amendoa/amendoa.dev/commit/12d3832dc51e67dba21428f9ad4c28e7efe4b5ee))
-
-
-### Chores
-
-* **release:** v0.3.0 [skip ci] ([11c3683](https://github.com/amendoa/amendoa.dev/commit/11c368361196ca9fcba1e333bd9229c312c2ed85))
-
-
-### Documentation
-
-* update linkedin url ([95af98f](https://github.com/amendoa/amendoa.dev/commit/95af98fa1bc9b10d10ce6fc6936d4b7aa44978e2))
 
