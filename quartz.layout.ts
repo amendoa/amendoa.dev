@@ -30,7 +30,7 @@ export const defaultContentPageLayout: PageLayout = {
     CustomComponent.GoToEnglishVersion(),
     Component.ArticleTitle(),
     Component.ConditionalRender({
-      component: Component.ContentMeta(),
+      component: CustomComponent.ArticleMeta(),
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.TagList(),
@@ -50,7 +50,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({ filterFn: (node) => node.slugSegment !== "tags" && node.slug !== "ai" }),
   ],
   right: [
     Component.Graph(),
@@ -81,7 +81,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({ filterFn: (node) => node.slugSegment !== "tags" && node.slug !== "ai" }),
   ],
   right: [],
 };
