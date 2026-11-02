@@ -21,3 +21,9 @@ pnpm dev
 ```sh
 pnpm build
 ```
+
+## Documentation
+
+- [Architecture overview](docs/architecture/overview.md)
+- [Development and article disclosure](docs/development.md)
+- [Agent collaboration rules](AGENTS.md)
