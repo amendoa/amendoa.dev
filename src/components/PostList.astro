@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Icon from './Icon.astro'
+import { postDescription, postUrl } from '../lib/content'
+interface Props { posts: CollectionEntry<'posts'>[] }
+const { posts } = Astro.props
+---
+<section class="gist-card posts-card" id="posts" aria-labelledby="posts-heading">
+  <header class="file-header simple-card-header"><h2 class="card-heading" id="posts-heading">Posts</h2><span class="post-count">{posts.length} posts</span></header>
+  <div class="markdown-body posts-body"><div class="post-list">
+    {posts.map(post => <a class="post-row" href={postUrl(post)}>
+      <span class="post-icon"><Icon name="file" /></span>
+      <div class="post-content"><div class="post-title">{post.data.title}</div><p class="post-description">{postDescription(post)}</p><div class="post-meta"><span class="post-type">{post.data.category ?? (post.data.lang === 'pt' ? 'Artigo' : 'Article')}</span><span class="post-lang">PT · EN</span></div></div>
+      <span class="post-arrow"><Icon name="arrow-right" /></span>
+    </a>)}
+  </div></div>
+</section>

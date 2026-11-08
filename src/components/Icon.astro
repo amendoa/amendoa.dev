@@ -1,0 +1,8 @@
+---
+import octicons from '@primer/octicons'
+interface Props { name: string; size?: number }
+const { name, size = 16 } = Astro.props
+const icon = (octicons as Record<string, { toSVG: (options: object) => string }>)[name]
+if (!icon) throw new Error(`Unknown Octicon: ${name}`)
+---
+<span aria-hidden="true" class="icon" set:html={icon.toSVG({ width: size, height: size })} />

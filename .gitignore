@@ -1,9 +1,18 @@
 # Node.js
 node_modules
 
-# Quartz
+# Build output
 dist
-quartz
 
 # macOS
 .DS_Store
+
+.astro/
+.playwright/
+
+test-results/
+playwright-report/
+
+.env
+.env.*
+!.env.example

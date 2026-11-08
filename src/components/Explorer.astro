@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { postUrl } from '../lib/content'
+interface Props { posts: CollectionEntry<'posts'>[]; active?: string }
+const { posts, active } = Astro.props
+type Tree = { folders: Map<string, Tree>; posts: CollectionEntry<'posts'>[] }
+const tree: Tree = { folders: new Map(), posts: [] }
+for (const post of posts) {
+  let node = tree
+  for (const part of (post.data.category ?? '').split('/').filter(Boolean)) {
+    if (!node.folders.has(part)) node.folders.set(part, { folders: new Map(), posts: [] })
+    node = node.folders.get(part)!
+  }
+  node.posts.push(post)
+}
+const contains = (node: Tree): boolean => node.posts.some(post => postUrl(post) === active) || [...node.folders.values()].some(contains)
+const Folder = (await import('./ExplorerTree.astro')).default
+---
+<Folder root node={tree} active={active} contains={contains} />

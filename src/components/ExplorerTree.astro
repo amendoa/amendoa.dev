@@ -1,0 +1,12 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Icon from './Icon.astro'
+import { postUrl } from '../lib/content'
+type Tree = { folders: Map<string, Tree>; posts: CollectionEntry<'posts'>[] }
+interface Props { node: Tree; active?: string; contains: (node: Tree) => boolean; root?: boolean }
+const { node, active, contains, root = false } = Astro.props
+---
+<ul class:list={{ "tree-folder-children": !root }}>
+  {[...node.folders.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, child]) => <li><details class="tree-folder" open><summary class="tree-folder-toggle"><span class="folder-arrow"><Icon name="chevron-right" /></span><span class="folder-closed"><Icon name="file-directory" /></span><span class="folder-open"><Icon name="file-directory-open-fill" /></span> {name}</summary><Astro.self node={child} active={active} contains={contains} /></details></li>)}
+  {node.posts.map(post => <li><a class:list={['tree-item', { current: postUrl(post) === active }]} href={postUrl(post)} aria-current={postUrl(post) === active ? 'page' : undefined}><Icon name="file" /> <span>{post.data.title}</span></a></li>)}
+</ul>

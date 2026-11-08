@@ -23,11 +23,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22.18.0
+          node-version: 24
           cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Make project
-        run: make
+      - name: Install Astro dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Create tag, bump version and generate Changelogs
         id: conventional
@@ -35,7 +36,10 @@ jobs:
         with:
           github-token: ${{ secrets.github_token }}
           skip-git-pull: true
-          config-file-path: "./conventional-changelog-action.config.js"
+          config-file-path: "./conventional-changelog-action.config.cjs"
+
+      - name: Check application
+        run: pnpm check
 
       - name: Build project
         env:

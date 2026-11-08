@@ -1,4 +1,4 @@
-import conventionalTypes from "./conventional-types";
+import conventionalTypes from "./conventional-types.cjs";
 
 export default {
   extends: ["@commitlint/config-conventional"],

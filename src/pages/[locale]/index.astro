@@ -1,0 +1,16 @@
+---
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PostList from '../../components/PostList.astro'
+import { allPosts, labels, locales, type Locale } from '../../lib/content'
+export function getStaticPaths() { return locales.map(locale => ({ params: { locale } })) }
+const locale = Astro.params.locale as Locale
+const about = (await getCollection('pages')).find(page => page.data.translationKey === 'about' && page.data.lang === locale)
+if (!about) throw new Error(`Missing about page: ${locale}`)
+const { Content } = await render(about)
+const posts = (await allPosts()).filter(post => post.data.lang === locale)
+---
+<BaseLayout title="amendoa.dev" locale={locale}>
+  <section class="gist-card"><header class="file-header simple-card-header"><h2 class="card-heading">{labels[locale].about}</h2></header><div class="markdown-body intro-body"><div class="home-intro"><h1>amendoa.dev</h1><Content /></div></div></section>
+  <PostList posts={posts} />
+</BaseLayout>

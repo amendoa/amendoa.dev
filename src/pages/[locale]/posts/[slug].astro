@@ -1,0 +1,20 @@
+---
+import { render } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import { allPosts, labels, postDescription, postUrl } from '../../../lib/content'
+export async function getStaticPaths() { return (await allPosts()).map(post => ({ params: { locale: post.data.lang, slug: post.data.routeSlug }, props: { post } })) }
+const { post } = Astro.props
+const { Content } = await render(post)
+const locale = post.data.lang
+const fallback = 'fallback' in post && post.fallback === true
+const minutes = Math.max(1, Math.ceil((post.body ?? '').trim().split(/\s+/).length / 200))
+const date = post.data.date && new Intl.DateTimeFormat(locale === 'pt' ? 'pt-BR' : 'en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(post.data.date)
+---
+<BaseLayout title={post.data.title} locale={locale} kind="post" path={postUrl(post)} translationKey={post.data.translationKey} fallback={fallback} description={postDescription(post)}>
+  <article class="gist-card"><header class="file-header simple-card-header"><h2 class="card-heading">{locale === 'pt' ? 'Artigo' : 'Article'}</h2></header><div class="article-body">
+    <a class="article-back" href={`/${locale}/#posts`}>← {labels[locale].back}</a><h1 class="article-title">{post.data.title}</h1>
+    <div class="article-meta">{date && <time datetime={post.data.date?.toISOString()}>{date}</time>}<span>{minutes} min {locale === 'pt' ? 'de leitura' : 'read'}</span>{post.data.tags.map(tag => <span class="article-tag">#{tag}</span>)}{post.data.aiAssisted && <a href={`/${locale}/ai/`}>{labels[locale].ai}</a>}</div>
+    {fallback && <p lang="en">English translation forthcoming. The article is currently in Portuguese.</p>}
+    <div class="markdown-body article-copy" lang={fallback ? 'pt-BR' : undefined}><Content /></div><p><a href={`/${locale}/#posts`}>← {labels[locale].back}</a></p>
+  </div></article>
+</BaseLayout>

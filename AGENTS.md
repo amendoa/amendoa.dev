@@ -2,7 +2,7 @@
 
 ## Project context
 
-This repository is Matheus Silva de Almeida's personal blog. It uses Quartz, Markdown content, TypeScript configuration, and custom components. Preserve the author's voice, the existing Portuguese and English content conventions, and the current design unless a change is requested or approved. Verify assumptions against the repository before making changes.
+This repository is Matheus Silva de Almeida's personal blog. It uses Astro static generation, Markdown content collections, TypeScript, and GitHub Primer. Preserve the author's voice, the existing Portuguese and English content conventions, and the current design unless a change is requested or approved. Verify assumptions against the repository before making changes.
 
 ## Collaboration and approval
 
@@ -33,8 +33,9 @@ For substantial work across multiple steps or sessions, maintain a plan through 
 
 ## Engineering practices
 
-- Favor the existing Quartz version, component patterns, and small, understandable changes; explain meaningful new dependencies or infrastructure.
+- Favor the existing Astro version, Primer design system, component patterns, and small, understandable changes; explain meaningful new dependencies or infrastructure.
 - Keep authored content and personal claims accurate. Do not infer AI use on existing articles or change their wording without evidence or the author's direction.
+- Read [DESIGN.md](DESIGN.md) before any UI change. It is the authoritative approved visual and interaction baseline. Preserve its layout, typography, Primer styling and control behavior during feature work and refactors; change them only within the owner's explicitly requested or approved scope. Do not request approval again for changes already authorized. Update DESIGN.md after approved design changes.
 - Preserve responsive behavior, keyboard access, semantic HTML, readable contrast, and light/dark themes for UI changes.
 - Run relevant available checks and report what actually ran. For interface changes, inspect affected layouts and interactions where practical.
 - Do not commit secrets or personal data. Preserve untracked and unrelated user files.
