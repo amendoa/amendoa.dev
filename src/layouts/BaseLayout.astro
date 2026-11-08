@@ -1,0 +1,87 @@
+---
+import '../styles/primer.css'
+import '../styles/site.css'
+import Icon from '../components/Icon.astro'
+import Explorer from '../components/Explorer.astro'
+import { allPosts, labels, otherLocale, postUrl, type Locale } from '../lib/content'
+interface Props { title: string; locale: Locale; path?: string; translationKey?: string; kind?: 'home' | 'post' | 'ai'; description?: string; fallback?: boolean }
+const { title, locale, path = `/${locale}/`, translationKey, kind = 'home', description, fallback = false } = Astro.props
+const t = labels[locale]
+const posts = await allPosts()
+const localPosts = posts.filter(post => post.data.lang === locale)
+const other = otherLocale(locale)
+const counterpart = kind === 'post' ? posts.find(post => post.data.lang === other && post.data.translationKey === translationKey) : undefined
+const alternate = kind === 'post' ? (counterpart ? postUrl(counterpart) : undefined) : kind === 'ai' ? `/${other}/ai/` : `/${other}/`
+const canonical = new URL(path, Astro.site)
+const alternateUrl = alternate ? new URL(alternate, Astro.site) : undefined
+---
+<!doctype html>
+<html lang={locale === 'pt' ? 'pt-BR' : 'en'} data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+  <head>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/icon.png" /><link rel="alternate" type="application/rss+xml" title="amendoa.dev" href="/index.xml" />
+    <title>{title === 'amendoa.dev' ? title : `${title} · amendoa.dev`}</title>
+    {description && <meta name="description" content={description} />}
+    {fallback && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    {!fallback && <link rel="alternate" hreflang={locale === 'pt' ? 'pt-BR' : 'en'} href={canonical} />}
+    {!fallback && alternateUrl && !(counterpart && 'fallback' in counterpart) && <link rel="alternate" hreflang={other === 'pt' ? 'pt-BR' : 'en'} href={alternateUrl} />}
+    <meta property="og:title" content={title} /><meta property="og:url" content={canonical} /><meta property="og:type" content={kind === 'post' ? 'article' : 'website'} />
+    <script is:inline>document.documentElement.classList.add("js");try{const mode=localStorage.getItem('theme');if(mode==='light'||mode==='dark')document.documentElement.dataset.colorMode=mode}catch{}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{locale === 'pt' ? 'Pular para o conteúdo' : 'Skip to content'}</a>
+    <div class="site-layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+          <a class="brand" href={`/${locale}/`}><img src="/logo.svg" width="34" height="34" alt="" /><span>amendoa<span class="domain">.dev</span></span></a>
+          <div class="sidebar-top-actions">
+            <button class="icon-button theme-switch" type="button" data-dark-label={t.themeDark} data-light-label={t.themeLight} aria-label={t.themeDark}><span class="sun"><Icon name="sun" /></span><span class="moon"><Icon name="moon" /></span></button>
+            <button class="icon-button mobile-menu" aria-label={t.menu} aria-expanded="false" aria-controls="sidebar-body"><Icon name="three-bars" /></button>
+          </div>
+        </div>
+        <div class="sidebar-body" id="sidebar-body">
+          <p class="nav-label">{t.explore}</p>
+          <nav class="sidebar-nav" aria-label={t.explore}>
+            <a class:list={['nav-link', { active: kind === 'home' }]} href={`/${locale}/`} aria-current={kind === 'home' ? 'page' : undefined}><Icon name="home" />{t.home}</a>
+            <a class:list={['nav-link', { active: kind === 'post' }]} href={`/${locale}/#posts`}><Icon name="file" />{t.all}<span class="nav-count">{localPosts.length}</span></a>
+          </nav>
+          <p class="nav-label nav-label-secondary">EXPLORER</p>
+          <nav class="tree-list" aria-label="Explorer"><Explorer posts={localPosts} active={path} /></nav>
+          <div class="sidebar-bottom"><span>amendoa.dev</span><a href="https://github.com/amendoa/amendoa.dev">GitHub <Icon name="link-external" /></a></div>
+        </div>
+      </aside>
+      <div class="content-area">
+        <div class="top-controls"><nav class="breadcrumb article-breadcrumb" aria-label={locale === 'pt' ? 'Caminho' : 'Breadcrumb'}><a href={`/${locale}/`}>amendoa.dev</a><span>/</span>{kind === 'post' && <><a href={`/${locale}/#posts`}>{t.all}</a><span>/</span></>}<strong>{kind === 'home' ? t.home : title}</strong></nav>
+          <nav class="locale-toggle" aria-label={locale === 'pt' ? 'Idioma' : 'Language'}>{locale === 'pt' ? <span aria-current="page">PT</span> : <a href={alternate} lang="pt-BR">PT</a>}{locale === 'en' ? <span aria-current="page">EN</span> : <a href={alternate} lang="en">EN</a>}</nav>
+        </div>
+        <main id="main"><slot /></main>
+        <footer class="page-footer"><span>© {new Date().getFullYear()} amendoa.dev</span><span>{t.source}</span><a href="https://github.com/amendoa/amendoa.dev">Source <Icon name="link-external" /></a></footer>
+      </div>
+    </div>
+    <script>
+      const menu = document.querySelector<HTMLButtonElement>('.mobile-menu')!
+      menu.addEventListener('click', () => {
+        const open = document.querySelector('#sidebar')!.classList.toggle('open')
+        menu.setAttribute('aria-expanded', String(open))
+      })
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { menu.click(); menu.focus() }
+      })
+      function updateTheme() {
+        const root = document.documentElement
+        const actual = root.dataset.colorMode === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : root.dataset.colorMode
+        document.querySelectorAll<HTMLButtonElement>('.theme-switch').forEach(button => button.setAttribute('aria-label', actual === 'dark' ? button.dataset.lightLabel! : button.dataset.darkLabel!))
+      }
+      updateTheme()
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme)
+      document.querySelectorAll<HTMLButtonElement>('.theme-switch').forEach(button => button.addEventListener('click', () => {
+        const root = document.documentElement
+        const dark = root.dataset.colorMode === 'dark' || (root.dataset.colorMode === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches)
+        root.dataset.colorMode = dark ? 'light' : 'dark'
+        try { localStorage.setItem('theme', root.dataset.colorMode) } catch {}
+        updateTheme()
+      }))
+    </script>
+  </body>
+</html>

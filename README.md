@@ -1,29 +1,23 @@
-# amendoa.dev <img height="24" width="24" src="./images/logo.svg" />
-![Delivery](https://github.com/amendoa/amendoa.dev/actions/workflows/delivery.yml/badge.svg?branch=main)
+# amendoa.dev
 
-This is my [personal blog](https://amendoa.dev/). I built it with [Quartz](https://quartz.jzhao.xyz/). If you're curious about how I set it up, I've explained the process [here](https://amendoa.dev/how-i-built-my-blog-with-quartz) (English version is in progress).
+Matheus Silva de Almeida's bilingual static blog at [amendoa.dev](https://amendoa.dev), built with Astro and GitHub Primer. GitHub Actions deploys it to Cloudflare Pages on pushes to `main`.
 
-_This project is licensed under the [MIT license](LICENSE)._
+Requires Node.js 24 and pnpm 12.15.0.
 
-## Setup (requires Node.js, PNPM and Unix)
 ```sh
-git clone git@github.com:amendoa/amendoa.dev.git
-cd amendoa.dev
-make
-```
-
-## Running (dev)
-```sh
-pnpm dev
-```
-
-## Building (prod)
-```sh
+corepack enable
+pnpm install --frozen-lockfile
+pnpm dev --port 4322
+pnpm check
 pnpm build
 ```
 
-## Documentation
+Development listens on the local network. Configure additional allowed hostnames in `.env` using [.env.example](.env.example); see the [development guide](docs/development.md). Production output is `dist/`. With the development server running, `pnpm test:e2e` checks the primary browser interactions (install Chromium with `pnpm exec playwright install chromium` first).
 
-- [Architecture overview](docs/architecture/overview.md)
-- [Development and article disclosure](docs/development.md)
-- [Agent collaboration rules](AGENTS.md)
+- [Approved design](DESIGN.md)
+- [Architecture](docs/architecture/overview.md)
+- [Authoring and development](docs/development.md)
+- [Deployment and rollback](docs/deployment.md)
+- [To do](TODO.md)
+
+[MIT license](LICENSE).
