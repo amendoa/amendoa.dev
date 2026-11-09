@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Primer dark: bgColor-default, bgColor-muted, borderColor-default, fgColor-default, fgColor-muted. -->
+  <rect width="1200" height="630" fill="#0d1117"/>
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="#151b23" stroke="#3d444d" stroke-width="2"/>
+  <path d="M40 118H1160" stroke="#3d444d" stroke-width="2"/>
+  <circle cx="82" cy="79" r="9" fill="#9b87e9"/>
+  <text x="108" y="88" fill="#9198a1" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600">amendoa.dev</text>
+  <svg x="104" y="177" width="264" height="264" viewBox="0 0 800 800" fill="none">
+    <path d="M200 622V582H160V542H120V502H80H40V462H0V222H80V142H120V62H240V102H360V182H440V102H560V62H680V142H720V222H800V462H760V502H720H680V542H640V582H600V622H680V742H560V662H440V582H360V662H240V742H120V622H200Z" fill="#4c31ba"/>
+    <path d="M200 702H160V662H200V702ZM640 702H600V662H640V702ZM320 222H480V142H520V222H560V262H600V302H640V422H720V262H760V422H720V462H640V502H600V542H560V622H480V542H320V622H240V542H200V502H160V462H80V422H40V262H80V422H160V302H200V262H240V222H280V142H320V222ZM240 342V462H320V342H240ZM480 342V462H560V342H480ZM200 222H160V262H120V182H200V222ZM680 262H640V222H600V182H680V262ZM200 142H160V102H200V142ZM640 142H600V102H640V142Z" fill="#9b87e9"/>
+  </svg>
+  <text x="434" y="306" fill="#f0f6fc" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700" letter-spacing="-2">amendoa.dev</text>
+  <text x="438" y="358" fill="#9198a1" font-family="Arial, Helvetica, sans-serif" font-size="29">Matheus Silva de Almeida</text>
+  <path d="M80 513H1120" stroke="#3d444d" stroke-width="2"/>
+  <text x="82" y="553" fill="#9198a1" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="2">BLOG</text>
+  <text x="1020" y="553" fill="#9198a1" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="2">PT · EN</text>
+</svg>
