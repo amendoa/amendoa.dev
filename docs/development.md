@@ -21,3 +21,5 @@ Keep standalone projects accompanying articles in `article-projects/<markdown-fi
 ## Checks
 
 `pnpm check` validates Astro and TypeScript; `pnpm build` generates static output. With a server running on `localhost:4322`, `pnpm test:e2e` checks language navigation, the presence of article media and download links, mobile navigation, theme persistence, and JavaScript-disabled access. The checks do not download or validate the STL files. `TEST_URL` changes the base URL for the first two tests; the JavaScript-disabled test currently uses port 4322 directly. Check desktop/mobile light/dark layouts against DESIGN.md after visual changes. Test HTTP redirect changes on Cloudflare Pages.
+
+The shared social card is `public/social-card.png`; its editable source is `src/assets/social-card.svg`. Export the source at 1200×630 pixels after edits, keeping its embedded alien logo in sync with `public/logo.svg`. Check the generated Open Graph and Twitter image URLs in both locales, then inspect a live sharing preview after deployment.

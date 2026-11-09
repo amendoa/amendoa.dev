@@ -45,6 +45,10 @@ Mobile does not shrink reading text. Code uses 85% of the reading size, matching
 
 The About heading is 32px at every breakpoint. Article titles scale up to 34px on desktop, use 28px below 730px, and 25px below 450px. Article section headings are 24px. Card headers, breadcrumbs and social links use 14px. Code blocks use 13.6px text with approximately 19.72px line height and horizontal scrolling when needed; the page itself must not overflow horizontally.
 
+## Social preview
+
+The shared 1200×630 social card pairs the alien logo with the site name and author. Its dark background, card, border, primary text and muted text use the corresponding Primer dark color values. The card is language neutral; page metadata supplies localized titles and descriptions. Its editable source is `src/assets/social-card.svg`, and the published image is `public/social-card.png`.
+
 ## Language and accessibility
 
 Every article has `/pt/posts/{slug}/` and `/en/posts/{slug}/` URLs. Missing English content uses the Portuguese body with a translation-pending notice, a `pt-BR` body language, and no indexing until translated. Language controls navigate to the corresponding article. Normal navigation and Explorer work without JavaScript; mobile navigation remains expanded in that case. The enhanced menu supports Escape and exposes its expanded state.
