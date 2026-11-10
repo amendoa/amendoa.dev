@@ -115,11 +115,11 @@ Os dois STLs abaixo mostram esse processo e os dois fizeram parte do que imprimi
 
 Primeiro, a curva:
 
-<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" title="Curva base para a borda interna"><a href="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" download data-router-ignore>Baixar STL</a></stl-viewer>
+<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" title="Curva base para a borda interna"><strong>Curva base para a borda interna</strong><a href="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" download>Baixar STL</a></stl-viewer>
 
 Depois, criei um reto utilizando a própria curva `Untitled.stl`:
 
-<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" title="Peça final usada na borda interna"><a href="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" download data-router-ignore>Baixar STL</a></stl-viewer>
+<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" title="Peça final usada na borda interna"><strong>Peça final usada na borda interna</strong><a href="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" download>Baixar STL</a></stl-viewer>
 
 Eu tinha pequenas quantidades de filamento que sobraram de outras impressões, então imprimi as peças nas cores que estavam disponíveis.
 

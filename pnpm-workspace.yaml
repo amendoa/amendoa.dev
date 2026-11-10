@@ -2,3 +2,6 @@ minimumReleaseAgeExclude:
   - '@astrojs/internal-helpers@0.13.1'
   - '@astrojs/markdown-satteri@0.4.7'
   - astro@7.4.7
+allowBuilds:
+  esbuild@0.17.19: true
+  workerd@1.20241106.1: true

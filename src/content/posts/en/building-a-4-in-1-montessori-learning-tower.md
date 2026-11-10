@@ -115,11 +115,11 @@ The two STLs below show that process, and both were part of what I printed to ge
 
 First, the base curve:
 
-<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" title="Base curve for the inner border"><a href="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" download data-router-ignore>Download STL</a></stl-viewer>
+<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" title="Base curve for the inner border"><strong>Base curve for the inner border</strong><a href="/attachments/building-a-4-in-1-montessori-learning-tower/rounded_C_MDF_clip_20mm_no_inner_fillet_outer_R1.stl" download>Download STL</a></stl-viewer>
 
 Then, the derived STL:
 
-<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" title="Final part used on the inner border"><a href="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" download data-router-ignore>Download STL</a></stl-viewer>
+<stl-viewer src="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" title="Final part used on the inner border"><strong>Final part used on the inner border</strong><a href="/attachments/building-a-4-in-1-montessori-learning-tower/Untitled.stl" download>Download STL</a></stl-viewer>
 
 I had several small amounts of leftover filament, so I printed the pieces in the colors I had available.
 
