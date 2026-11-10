@@ -17,4 +17,11 @@ const date = post.data.date && new Intl.DateTimeFormat(locale === 'pt' ? 'pt-BR'
     {fallback && <p lang="en">English translation forthcoming. The article is currently in Portuguese.</p>}
     <div class="markdown-body article-copy" lang={fallback ? 'pt-BR' : undefined}><Content /></div><p><a href={`/${locale}/#posts`}>← {labels[locale].back}</a></p>
   </div></article>
+  <dialog class="image-zoom-dialog" aria-label={locale === 'pt' ? 'Imagem ampliada' : 'Zoomed image'} tabindex="-1">
+    <img alt="" />
+  </dialog>
+  <script>
+    import '../../../lib/stl-viewer'
+    import '../../../lib/image-zoom'
+  </script>
 </BaseLayout>

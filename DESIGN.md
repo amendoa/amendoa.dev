@@ -1,6 +1,6 @@
 # amendoa.dev design
 
-Status: approved production interface. Owner: Matheus Silva de Almeida. Updated: 2026-11-07.
+Status: approved production interface. Owner: Matheus Silva de Almeida. Updated: 2026-11-10.
 
 ## Reference and scope
 
@@ -15,6 +15,10 @@ Before changing the interface, read this specification and inspect the affected 
 The desktop shell uses a 1210px outer container, 235px sidebar, 55px gutter, and up to 820px main column. Below 1050px the sidebar and gutter become narrower; below 730px the layout becomes one column. Mobile uses a brand/theme/menu row, collapsible navigation, and visible breadcrumb and PT/EN links. At 390px the cards use 12px page margins.
 
 Home contains two independent bordered cards: Sobre/About with the author's introduction and social links, followed by all posts with titles, excerpts from the actual content, category and language metadata. Card headers have no filename or Markdown decorations. Article pages reuse the shell and display the complete Markdown, metadata, code, images and downloads. The AI disclosure appears only when explicitly declared by the article.
+
+STL files appear in an inline Primer-bordered card with a title, a 3D preview and a download button. The preview follows the active light or dark background. Dragging rotates the model; Shift + drag or right drag pans it; the wheel zooms. The cursor changes from grab to grabbing during a drag. Keyboard arrow keys pan when the preview is focused, and the download remains available without JavaScript or WebGL.
+
+Article images show a zoom-in cursor and open in a native modal dialog without changing the reading layout. The enlarged image has no border, rounded corners or frame shadow, fits the viewport, and can grow up to twice its source size. Scrolling, Escape, the image, or the backdrop closes it; focus returns to the original image. Images remain visible without JavaScript.
 
 Explorer is built from category paths, supports nested native folder disclosures, and highlights the active article. Folders start expanded. Only the disclosure arrow rotates, by 90 degrees over 150ms; the folder itself never rotates. The closed state uses the `file-directory` Octicon and the open state uses `file-directory-open-fill`. Each folder's visuals follow its own disclosure state independently of its ancestors. Home and All posts navigate with normal links. No graph, search, SPA shell or generated biography is included.
 
