@@ -14,19 +14,38 @@ const counterpart = kind === 'post' ? posts.find(post => post.data.lang === othe
 const alternate = kind === 'post' ? (counterpart ? postUrl(counterpart) : undefined) : kind === 'ai' ? `/${other}/ai/` : `/${other}/`
 const canonical = new URL(path, Astro.site)
 const alternateUrl = alternate ? new URL(alternate, Astro.site) : undefined
+const pageTitle = title === 'amendoa.dev' ? title : `${title} · amendoa.dev`
+const pageDescription = description ?? t.source
+const socialImage = new URL('/social-card.png', Astro.site)
+const socialImageAlt = locale === 'pt' ? 'Logo e nome do amendoa.dev' : 'amendoa.dev logo and name'
 ---
 <!doctype html>
 <html lang={locale === 'pt' ? 'pt-BR' : 'en'} data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
   <head>
     <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/icon.png" /><link rel="alternate" type="application/rss+xml" title="amendoa.dev" href="/index.xml" />
-    <title>{title === 'amendoa.dev' ? title : `${title} · amendoa.dev`}</title>
-    {description && <meta name="description" content={description} />}
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     {fallback && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
     {!fallback && <link rel="alternate" hreflang={locale === 'pt' ? 'pt-BR' : 'en'} href={canonical} />}
     {!fallback && alternateUrl && !(counterpart && 'fallback' in counterpart) && <link rel="alternate" hreflang={other === 'pt' ? 'pt-BR' : 'en'} href={alternateUrl} />}
-    <meta property="og:title" content={title} /><meta property="og:url" content={canonical} /><meta property="og:type" content={kind === 'post' ? 'article' : 'website'} />
+    <meta property="og:site_name" content="amendoa.dev" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={kind === 'post' ? 'article' : 'website'} />
+    <meta property="og:locale" content={locale === 'pt' ? 'pt_BR' : 'en_US'} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <script is:inline>document.documentElement.classList.add("js");try{const mode=localStorage.getItem('theme');if(mode==='light'||mode==='dark')document.documentElement.dataset.colorMode=mode}catch{}</script>
   </head>
   <body>
