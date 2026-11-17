@@ -1,16 +1,23 @@
-# Development
+# Development and authoring
 
-See the [README](../README.md) for setup, local development, and the production build.
+See the [README](../README.md) for setup and commands. All application code is under `src/`. Read [DESIGN.md](../DESIGN.md) before UI changes and preserve its approved layout and interaction behavior.
 
-## AI-assisted writing disclosure
+## Local hostnames
 
-When AI assisted the writing of an article, add the boolean `aiAssisted: true` to its YAML frontmatter:
+Copy `.env.example` to `.env` and set `DEV_ALLOWED_HOSTS` to a comma-separated list of development hostnames, without protocols or ports (for example, `matrix.local,blog.local`). The root `.env` is ignored by Git. A shell environment value takes precedence. With no value set, Vite's default localhost and IP-address access remains available. Restart the development server after changing the variable.
 
-```yaml
----
-title: Example article
-aiAssisted: true
----
-```
+## Content
 
-The article displays an “AI-assisted writing” link to the bilingual explanation at `/ai`. Omit the field or set it to `false` when the disclosure does not apply. Only the YAML boolean `true` enables the label; the quoted string `"true"` does not.
+Add Markdown under `src/content/posts/pt/` and `src/content/posts/en/`. Use `title`, `lang`, `translationKey`, and `routeSlug`; optional fields are `category`, `tags`, `date`, `draft` and `aiAssisted`. Translation keys pair the two versions; category paths can contain `/` to create nested Explorer folders. Duplicate authored keys or routes fail the build. Posts sort by `date`, newest first, with title as the tie-breaker; undated entries follow dated entries. Use `YYYY-MM-DD` and the same date in both versions.
+
+An absent English entry produces an English route containing the Portuguese body. Add the English file with the matching translation key when ready. Until then, a notice identifies the content language, and the fallback is excluded from sitemap indexing. All published posts currently have English translations.
+
+Use `aiAssisted: true` only when the author declares it; this displays a link to the localized disclosure. Group images and downloads by article under `public/attachments/<markdown-filename-without-extension>/`, shared by both languages. The folder name must match the post’s Markdown filename, not its localized URL slug. Use standard Markdown links and `/attachments/<markdown-filename-without-extension>/<filename>` URLs. Update article references when moving files. The published posts cover Bindfs, the Montessori learning tower, and a Quartz setup tutorial.
+
+## Article projects
+
+Keep standalone projects accompanying articles in `article-projects/<markdown-filename-without-extension>/`. Link to the project folder from both language versions. These projects are separate from the blog application.
+
+## Checks
+
+`pnpm check` validates Astro and TypeScript; `pnpm build` generates static output. With a server running on `localhost:4322`, `pnpm test:e2e` checks language navigation, the presence of article media and download links, mobile navigation, theme persistence, and JavaScript-disabled access. The checks do not download or validate the STL files. `TEST_URL` changes the base URL for the first two tests; the JavaScript-disabled test currently uses port 4322 directly. Check desktop/mobile light/dark layouts against DESIGN.md after visual changes. Test HTTP redirect changes on Cloudflare Pages.

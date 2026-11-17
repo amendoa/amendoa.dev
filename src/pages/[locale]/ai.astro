@@ -1,0 +1,12 @@
+---
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { locales, type Locale } from '../../lib/content'
+export function getStaticPaths() { return locales.map(locale => ({ params: { locale } })) }
+const locale = Astro.params.locale as Locale
+const page = (await getCollection('pages')).find(entry => entry.data.translationKey === 'ai' && entry.data.lang === locale)
+if (!page) throw new Error(`Missing disclosure: ${locale}`)
+const { Content } = await render(page)
+const title = locale === 'pt' ? 'Escrita assistida por IA' : 'AI-assisted writing'
+---
+<BaseLayout title={title} locale={locale} kind="ai" path={`/${locale}/ai/`}><article class="gist-card"><div class="markdown-body article-body"><h1>{title}</h1><Content /></div></article></BaseLayout>
