@@ -1,9 +1,21 @@
+## [0.8.0](https://github.com/amendoa/amendoa.dev/compare/v0.7.0...v0.8.0) (2026-11-17)
+
+
+### Features
+
+* rebuild blog with Astro and bilingual content ([35c808f](https://github.com/amendoa/amendoa.dev/commit/35c808f3850f87467871120c206a85db81dcb949))
+
 ## [0.7.0](https://github.com/amendoa/amendoa.dev/compare/v0.6.0...v0.7.0) (2026-11-02)
 
 
 ### Features
 
 * add AI-assisted label ([e1277f2](https://github.com/amendoa/amendoa.dev/commit/e1277f2a4c53b3066884079fa862832b972d6a71))
+
+
+### Chores
+
+* **release:** v0.7.0 [skip ci] ([8483b6a](https://github.com/amendoa/amendoa.dev/commit/8483b6a61e0be491aa80d8bfce6f5abb4b29c097))
 
 ## [0.6.0](https://github.com/amendoa/amendoa.dev/compare/v0.5.0...v0.6.0) (2026-01-12)
 
@@ -52,16 +64,4 @@
 ### Chores
 
 * **release:** v0.4.0 [skip ci] ([5ee9c39](https://github.com/amendoa/amendoa.dev/commit/5ee9c399c6471737b89274e15a227ead7a816103))
-
-## [0.3.1](https://github.com/amendoa/amendoa.dev/compare/v0.3.0...v0.3.1) (2025-09-18)
-
-
-### Bug Fixes
-
-* remove snippets link ([83bcb27](https://github.com/amendoa/amendoa.dev/commit/83bcb276ca0ec935c4b078a11268e90ba584119a))
-
-
-### Chores
-
-* **release:** v0.3.1 [skip ci] ([4394114](https://github.com/amendoa/amendoa.dev/commit/4394114364d31867649f8d53ba8ed2f0f35dbbaf))
 
