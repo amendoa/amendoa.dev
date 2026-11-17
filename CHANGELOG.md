@@ -1,9 +1,22 @@
+## [0.9.0](https://github.com/amendoa/amendoa.dev/compare/v0.8.0...v0.9.0) (2026-11-17)
+
+
+### Features
+
+* add social sharing image and metadata ([d3f284e](https://github.com/amendoa/amendoa.dev/commit/d3f284e1e479f6154aa982aa353bfa29690bddfa))
+* add STL viewer and image zoom ([163c8c1](https://github.com/amendoa/amendoa.dev/commit/163c8c18469c1137c170f2e228efa4e72070505d))
+
 ## [0.8.0](https://github.com/amendoa/amendoa.dev/compare/v0.7.0...v0.8.0) (2026-11-17)
 
 
 ### Features
 
 * rebuild blog with Astro and bilingual content ([35c808f](https://github.com/amendoa/amendoa.dev/commit/35c808f3850f87467871120c206a85db81dcb949))
+
+
+### Chores
+
+* **release:** v0.8.0 [skip ci] ([c3dd391](https://github.com/amendoa/amendoa.dev/commit/c3dd391b2ffe203fa4b789c0348c95a25f71a95d))
 
 ## [0.7.0](https://github.com/amendoa/amendoa.dev/compare/v0.6.0...v0.7.0) (2026-11-02)
 
@@ -52,16 +65,4 @@
 
 * **release:** v0.5.0 [skip ci] ([9afc668](https://github.com/amendoa/amendoa.dev/commit/9afc668410a874025acdd6a96c3ed59545c9626d))
 * set packageManager version ([7b88cf2](https://github.com/amendoa/amendoa.dev/commit/7b88cf20ced6e21c609637ca288a1d88b77e3cd0))
-
-## [0.4.0](https://github.com/amendoa/amendoa.dev/compare/v0.3.1...v0.4.0) (2025-09-25)
-
-
-### Features
-
-* update logo ([b4628fe](https://github.com/amendoa/amendoa.dev/commit/b4628fe9e85deef52e2229fc7041e3f317022cfd))
-
-
-### Chores
-
-* **release:** v0.4.0 [skip ci] ([5ee9c39](https://github.com/amendoa/amendoa.dev/commit/5ee9c399c6471737b89274e15a227ead7a816103))
 
